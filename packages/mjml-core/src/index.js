@@ -1,22 +1,24 @@
-import { find, get, identity, map, omit, reduce, isObject } from 'lodash'
+import find from 'lodash/find'
+import get from 'lodash/get'
+import identity from 'lodash/identity'
+import isObject from 'lodash/isObject'
+import map from 'lodash/map'
+import omit from 'lodash/omit'
+import reduce from 'lodash/reduce'
 import path from 'path'
 import juice from 'juice'
 import { html as htmlBeautify } from 'js-beautify'
-import { minify as htmlMinify } from 'html-minifier'
 
-import MJMLParser from 'mjml-parser-xml'
-import MJMLValidator from 'mjml-validator'
-import { handleMjml3 } from 'mjml-migrate'
+import MJMLParser from 'browser-mjml-parser-xml'
+import MJMLValidator from 'browser-mjml-validator'
+import { handleMjml3 } from 'browser-mjml-migrate'
 
 import components, { initComponent, registerComponent } from './components'
 
 import suffixCssClasses from './helpers/suffixCssClasses'
 import mergeOutlookConditionnals from './helpers/mergeOutlookConditionnals'
-import minifyOutlookConditionnals from './helpers/minifyOutlookConditionnals'
 import defaultSkeleton from './helpers/skeleton'
 import { initializeType } from './types/type'
-
-import handleMjmlConfig from './helpers/mjmlconfig'
 
 class ValidationError extends Error {
   constructor(message, errors) {
@@ -30,16 +32,6 @@ export default function mjml2html(mjml, options = {}) {
   let content = ''
   let errors = []
 
-  if (typeof options.skeleton === 'string') {
-    /* eslint-disable global-require */
-    /* eslint-disable import/no-dynamic-require */
-    options.skeleton = require(options.skeleton.charAt(0) === '.'
-      ? path.resolve(process.cwd(), options.skeleton)
-      : options.skeleton)
-    /* eslint-enable global-require */
-    /* eslint-enable import/no-dynamic-require */
-  }
-
   const {
     beautify = false,
     fonts = {
@@ -52,15 +44,11 @@ export default function mjml2html(mjml, options = {}) {
       Ubuntu: 'https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700',
     },
     keepComments,
-    minify = false,
     skeleton = defaultSkeleton,
     validationLevel = 'soft',
     filePath = '.',
     mjmlConfigPath = null,
   } = options
-
-  // if mjmlConfigPath is specified then we need to handle it on each call
-  if (mjmlConfigPath) handleMjmlConfig(mjmlConfigPath, registerComponent)
 
   if (typeof mjml === 'string') {
     mjml = MJMLParser(mjml, {
@@ -249,10 +237,6 @@ export default function mjml2html(mjml, options = {}) {
 
   content = processing(mjBody, bodyHelpers, applyAttributes)
 
-  if (minify && minify !== 'false') {
-    content = minifyOutlookConditionnals(content)
-  }
-
   content = skeleton({
     content,
     ...globalDatas,
@@ -277,14 +261,6 @@ export default function mjml2html(mjml, options = {}) {
         })
       : content
 
-  if (minify && minify !== 'false') {
-    content = htmlMinify(content, {
-      collapseWhitespace: true,
-      minifyCSS: false,
-      removeEmptyAttributes: true,
-    })
-  }
-
   content = mergeOutlookConditionnals(content)
 
   return {
@@ -293,8 +269,6 @@ export default function mjml2html(mjml, options = {}) {
   }
 }
 
-handleMjmlConfig(process.cwd(), registerComponent)
-
-export { components, initComponent, registerComponent, suffixCssClasses, handleMjmlConfig, initializeType }
+export { components, initComponent, registerComponent, suffixCssClasses, initializeType }
 
 export { BodyComponent, HeadComponent } from './createComponent'

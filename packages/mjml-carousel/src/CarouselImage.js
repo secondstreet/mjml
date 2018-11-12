@@ -1,4 +1,4 @@
-import { BodyComponent, suffixCssClasses } from 'mjml-core'
+import { BodyComponent, suffixCssClasses } from 'browser-mjml-core'
 
 export default class MjCarouselImage extends BodyComponent {
   static endingTag = true

@@ -1,7 +1,7 @@
 {
-  "name": "mjml-parser-xml",
-  "description": "mjml-parser-xml",
-  "version": "4.2.0",
+  "name": "browser-mjml-parser-xml",
+  "description": "browser-mjml-parser-xml",
+  "version": "4.2.7",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
     "lodash": "^4.17.2"
   },
   "devDependencies": {
-    "chai": "^4.1.1",
-    "mjml": "^4.2.0",
-    "mjml-core": "^4.2.0"
+    "browser-mjml": "^4.2.7",
+    "browser-mjml-core": "^4.2.7",
+    "chai": "^4.1.1"
   }
 }

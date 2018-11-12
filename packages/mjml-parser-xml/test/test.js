@@ -1,6 +1,6 @@
 const MJMLParser = require('../lib/index.js')
-require('mjml')
-const components = require('mjml-core').components
+require('browser-mjml')
+const components = require('browser-mjml-core').components
 const chai = require('chai')
 const displayDiff = require('./test-utils').displayDiff
 const omitDeepLodash = require('./test-utils').omitDeepLodash
@@ -13,7 +13,6 @@ const testValues = require('./test-values')
 const parse = mjml => MJMLParser(mjml, {
   keepComments: true,
   components,
-  filePath: '.'
 })
 
 testValues.forEach(testUnit => {
