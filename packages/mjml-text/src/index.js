@@ -1,6 +1,6 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
-import conditionalTag from 'mjml-core/lib/helpers/conditionalTag'
+import conditionalTag from 'browser-mjml-core/lib/helpers/conditionalTag'
 
 export default class MjText extends BodyComponent {
   static endingTag = true

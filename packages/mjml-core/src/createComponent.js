@@ -9,7 +9,7 @@ import {
   isNil,
 } from 'lodash'
 
-import MJMLParser from 'mjml-parser-xml'
+import MJMLParser from 'browser-mjml-parser-xml'
 
 import shorthandParser, { borderParser } from './helpers/shorthandParser'
 import formatAttributes from './helpers/formatAttributes'
