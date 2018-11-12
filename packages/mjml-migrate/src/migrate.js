@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
 import { keys, find } from 'lodash'
-import MJMLParser from 'mjml-parser-xml'
-import { components } from 'mjml-core'
+import MJMLParser from 'browser-mjml-parser-xml'
+import { components } from 'browser-mjml-core'
 
 import { unavailableTags, attributesWithUnit } from './config'
 

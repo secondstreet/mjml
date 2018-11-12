@@ -2,7 +2,7 @@
 import chokidar from 'chokidar'
 import glob from 'glob'
 import path from 'path'
-import mjml2html from 'mjml-core'
+import mjml2html from 'browser-mjml-core'
 import { flow, pickBy, flatMap, uniq, difference, remove } from 'lodash/fp'
 
 import readFile from './readFile'

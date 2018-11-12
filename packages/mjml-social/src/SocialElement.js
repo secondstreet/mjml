@@ -1,4 +1,4 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 import { get, each } from 'lodash'
 
 const IMG_BASE_URL = 'https://www.mailjet.com/images/theme/v1/icons/ico-social/'
