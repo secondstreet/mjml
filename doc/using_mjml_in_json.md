@@ -13,7 +13,7 @@ Exactly like using MJML as a markup, the JSON definition can be passed as an obj
 Here is working example:
 
 ```javascript
-var mjml2html = require('mjml')
+var mjml2html = require('browser-mjml')
 
 console.log(mjml2html({
     tagName: 'mjml',

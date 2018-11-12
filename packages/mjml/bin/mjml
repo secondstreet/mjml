@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 require('../lib/index')
-require('mjml-cli')
+require('browser-mjml-cli')

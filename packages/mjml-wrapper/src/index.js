@@ -1,5 +1,5 @@
-import MjSection from 'mjml-section'
-import { suffixCssClasses } from 'mjml-core'
+import MjSection from 'browser-mjml-section'
+import { suffixCssClasses } from 'browser-mjml-core'
 
 export default class MjWrapper extends MjSection {
   renderWrappedChildren() {
