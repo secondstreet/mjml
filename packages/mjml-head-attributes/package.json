@@ -1,7 +1,7 @@
 {
   "name": "browser-mjml-head-attributes",
   "description": "browser-mjml-head-attributes",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "build": "cross-env ../../node_modules/.bin/babel src --out-dir lib"
   },
   "dependencies": {
-    "browser-mjml-core": "^4.2.1",
+    "browser-mjml-core": "^4.2.2",
     "cross-env": "^5.1.4",
     "lodash": "^4.17.2"
   }
