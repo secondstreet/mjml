@@ -1,7 +1,7 @@
 {
   "name": "browser-mjml-hero",
   "description": "browser-mjml-hero",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "browser-mjml-core": "^4.2.2",
+    "browser-mjml-core": "^4.2.3",
     "cross-env": "^5.1.4",
     "lodash": "^4.17.2"
   }
