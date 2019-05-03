@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import identity from 'lodash/identity'
 import isNil from 'lodash/isNil'
 import kebabCase from 'lodash/kebabCase'
+import map from 'lodash/map'
 import reduce from 'lodash/reduce'
 
 import MJMLParser from 'browser-mjml-parser-xml'
@@ -130,19 +131,18 @@ export class BodyComponent extends Component {
       default: identity,
     }
 
-    return reduce(
+    return map(
       attributes,
-      (output, v, name) => {
+      (v, name) => {
         const value = (specialAttributes[name] || specialAttributes.default)(v)
 
         if (!isNil(value)) {
-          return `${output} ${name}="${value}"`
+          return `${name}="${value}"`
         }
 
-        return output
+        return null
       },
-      '',
-    )
+    ).filter(Boolean).join(' ');
   }
 
   styles(styles) {
