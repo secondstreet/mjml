@@ -3,10 +3,10 @@ import yargs from 'yargs'
 import { flow, pick, isNil, negate, pickBy } from 'lodash/fp'
 import { isArray, isEmpty, map, get } from 'lodash'
 
-import mjml2html, { components, initializeType } from 'mjml-core'
-import migrate from 'mjml-migrate'
-import validate from 'mjml-validator'
-import MJMLParser from 'mjml-parser-xml'
+import mjml2html, { components, initializeType } from 'browser-mjml-core'
+import migrate from 'browser-mjml-migrate'
+import validate from 'browser-mjml-validator'
+import MJMLParser from 'browser-mjml-parser-xml'
 
 import readFile, { flatMapPaths } from './commands/readFile'
 import watchFiles from './commands/watchFiles'
@@ -14,7 +14,7 @@ import readStream from './commands/readStream'
 import outputToFile, { isDirectory } from './commands/outputToFile'
 import outputToConsole from './commands/outputToConsole'
 
-import { version as coreVersion } from 'mjml-core/package.json' // eslint-disable-line import/first
+import { version as coreVersion } from 'browser-mjml-core/package.json' // eslint-disable-line import/first
 import { version as cliVersion } from '../package.json'
 import DEFAULT_OPTIONS from './helpers/defaultOptions'
 

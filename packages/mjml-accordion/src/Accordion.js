@@ -1,4 +1,4 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
 export default class MjAccordion extends BodyComponent {
   static allowedAttributes = {

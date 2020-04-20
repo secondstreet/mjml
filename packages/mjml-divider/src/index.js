@@ -1,6 +1,6 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
-import widthParser from 'mjml-core/lib/helpers/widthParser'
+import widthParser from 'browser-mjml-core/lib/helpers/widthParser'
 
 export default class MjDivider extends BodyComponent {
   static tagOmission = true
@@ -70,17 +70,15 @@ export default class MjDivider extends BodyComponent {
   renderAfter() {
     return `
       <!--[if mso | IE]>
-        <table
-          ${this.htmlAttributes({
-            align: 'center',
-            border: '0',
-            cellpadding: '0',
-            cellspacing: '0',
-            style: 'outlook',
-            role: 'presentation',
-            width: this.getOutlookWidth(),
-          })}
-        >
+        <table ${this.htmlAttributes({
+          align: 'center',
+          border: '0',
+          cellpadding: '0',
+          cellspacing: '0',
+          style: 'outlook',
+          role: 'presentation',
+          width: this.getOutlookWidth(),
+        })}>
           <tr>
             <td style="height:0;line-height:0;">
               &nbsp;
@@ -93,11 +91,7 @@ export default class MjDivider extends BodyComponent {
 
   render() {
     return `
-      <p
-        ${this.htmlAttributes({
-          style: 'p',
-        })}
-      >
+      <p ${this.htmlAttributes({ style: 'p' })}>
       </p>
       ${this.renderAfter()}
     `

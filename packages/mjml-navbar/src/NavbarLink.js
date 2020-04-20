@@ -1,6 +1,6 @@
-import { BodyComponent, suffixCssClasses } from 'mjml-core'
+import { BodyComponent, suffixCssClasses } from 'browser-mjml-core'
 
-import conditionalTag from 'mjml-core/lib/helpers/conditionalTag'
+import conditionalTag from 'browser-mjml-core/lib/helpers/conditionalTag'
 
 export default class MjNavbarLink extends BodyComponent {
   static endingTag = true

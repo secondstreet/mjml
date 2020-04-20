@@ -1,11 +1,11 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 import range from 'lodash/range'
 import repeat from 'lodash/repeat'
 import min from 'lodash/min'
 import map from 'lodash/map'
 import crypto from 'crypto'
 
-import { msoConditionalTag } from 'mjml-core/lib/helpers/conditionalTag'
+import { msoConditionalTag } from 'browser-mjml-core/lib/helpers/conditionalTag'
 
 export default class MjCarousel extends BodyComponent {
   static allowedAttributes = {

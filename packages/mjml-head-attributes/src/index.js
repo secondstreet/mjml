@@ -2,7 +2,7 @@ import forEach from 'lodash/forEach'
 import omit from 'lodash/omit'
 import reduce from 'lodash/reduce'
 
-import { HeadComponent } from 'mjml-core'
+import { HeadComponent } from 'browser-mjml-core'
 
 export default class MjAttributes extends HeadComponent {
   handler() {

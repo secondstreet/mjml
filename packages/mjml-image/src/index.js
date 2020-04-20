@@ -1,8 +1,8 @@
 import min from 'lodash/min'
 
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
-import widthParser from 'mjml-core/lib/helpers/widthParser'
+import widthParser from 'browser-mjml-core/lib/helpers/widthParser'
 
 export default class MjImage extends BodyComponent {
   static tagOmission = true

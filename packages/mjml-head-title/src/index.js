@@ -1,4 +1,4 @@
-import { HeadComponent } from 'mjml-core'
+import { HeadComponent } from 'browser-mjml-core'
 
 export default class MjTitle extends HeadComponent {
   static endingTag = true

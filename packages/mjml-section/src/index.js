@@ -1,4 +1,4 @@
-import { BodyComponent, suffixCssClasses } from 'mjml-core'
+import { BodyComponent, suffixCssClasses } from 'browser-mjml-core'
 import { flow, identity, join, filter } from 'lodash/fp'
 
 const makeBackgroundString = flow(filter(identity), join(' '))
@@ -119,17 +119,15 @@ export default class MjSection extends BodyComponent {
 
     return `
       <!--[if mso | IE]>
-      <table
-        ${this.htmlAttributes({
-          align: 'center',
-          border: '0',
-          cellpadding: '0',
-          cellspacing: '0',
-          class: suffixCssClasses(this.getAttribute('css-class'), 'outlook'),
-          style: { width: `${containerWidth}` },
-          width: parseInt(containerWidth, 10),
-        })}
-      >
+      <table ${this.htmlAttributes({
+        align: 'center',
+        border: '0',
+        cellpadding: '0',
+        cellspacing: '0',
+        class: suffixCssClasses(this.getAttribute('css-class'), 'outlook'),
+        style: { width: `${containerWidth}` },
+        width: parseInt(containerWidth, 10),
+      })}>
         <tr>
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
@@ -160,16 +158,14 @@ export default class MjSection extends BodyComponent {
             ? component.render()
             : `
           <!--[if mso | IE]>
-            <td
-              ${component.htmlAttributes({
-                align: component.getAttribute('align'),
-                class: suffixCssClasses(
-                  component.getAttribute('css-class'),
-                  'outlook',
-                ),
-                style: 'tdOutlook',
-              })}
-            >
+            <td ${component.htmlAttributes({
+              align: component.getAttribute('align'),
+              class: suffixCssClasses(
+                component.getAttribute('css-class'),
+                'outlook',
+              ),
+              style: 'tdOutlook',
+            })}>
           <![endif]-->
             ${component.render()}
           <!--[if mso | IE]>
@@ -244,11 +240,7 @@ export default class MjSection extends BodyComponent {
         >
           <tbody>
             <tr>
-              <td
-                ${this.htmlAttributes({
-                  style: 'td',
-                })}
-              >
+              <td ${this.htmlAttributes({ style: 'td' })}>
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <![endif]-->
@@ -279,18 +271,16 @@ export default class MjSection extends BodyComponent {
       `
 
     return `
-      <table
-        ${this.htmlAttributes({
-          align: 'center',
-          class: this.getAttribute('css-class'),
-          background: this.getAttribute('background-url'),
-          border: '0',
-          cellpadding: '0',
-          cellspacing: '0',
-          role: 'presentation',
-          style: 'tableFullwidth',
-        })}
-      >
+      <table ${this.htmlAttributes({
+        align: 'center',
+        class: this.getAttribute('css-class'),
+        background: this.getAttribute('background-url'),
+        border: '0',
+        cellpadding: '0',
+        cellspacing: '0',
+        role: 'presentation',
+        style: 'tableFullwidth',
+      })}>
         <tbody>
           <tr>
             <td>

@@ -1,7 +1,7 @@
 {
-  "name": "mjml-text",
-  "description": "mjml-text",
-  "version": "4.6.2",
+  "name": "browser-mjml-text",
+  "description": "browser-mjml-text",
+  "version": "4.6.3",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
-    "lodash": "^4.17.15",
-    "mjml-core": "4.6.2"
+    "browser-mjml-core": "4.6.3",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

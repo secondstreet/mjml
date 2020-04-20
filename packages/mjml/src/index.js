@@ -1,37 +1,57 @@
-import mjml2html, { registerComponent } from 'mjml-core'
-import { registerDependencies } from 'mjml-validator'
-
-import { Social, SocialElement } from 'mjml-social'
-import { Navbar, NavbarLink } from 'mjml-navbar'
-import { Carousel, CarouselImage } from 'mjml-carousel'
+import mjml2html, { registerComponent } from 'browser-mjml-core'
+import { registerDependencies } from 'browser-mjml-validator'
+import { Social, SocialElement } from 'browser-mjml-social'
+import { Navbar, NavbarLink } from 'browser-mjml-navbar'
+import { Carousel, CarouselImage } from 'browser-mjml-carousel'
 import {
   Accordion,
   AccordionElement,
   AccordionText,
   AccordionTitle,
-} from 'mjml-accordion'
+} from 'browser-mjml-accordion'
 
-registerComponent(require('mjml-body'))
-registerComponent(require('mjml-head'))
-registerComponent(require('mjml-head-attributes'))
-registerComponent(require('mjml-head-breakpoint'))
-registerComponent(require('mjml-head-font'))
-registerComponent(require('mjml-head-preview'))
-registerComponent(require('mjml-head-style'))
-registerComponent(require('mjml-head-title'))
-registerComponent(require('mjml-hero'))
-registerComponent(require('mjml-button'))
-registerComponent(require('mjml-column'))
-registerComponent(require('mjml-divider'))
-registerComponent(require('mjml-group'))
-registerComponent(require('mjml-image'))
+import MjBody from 'browser-mjml-body'
+import MjButton from 'browser-mjml-button'
+import MjColumn from 'browser-mjml-column'
+import MjDivider from 'browser-mjml-divider'
+import MjGroup from 'browser-mjml-group'
+import MjHead from 'browser-mjml-head'
+import MjHeadAttributes from 'browser-mjml-head-attributes'
+import MjHeadBreakpoint from 'browser-mjml-head-breakpoint'
+import MjHeadFont from 'browser-mjml-head-font'
+import MjHeadPreview from 'browser-mjml-head-preview'
+import MjHeadStyle from 'browser-mjml-head-style'
+import MjHeadTitle from 'browser-mjml-head-title'
+import MjHero from 'browser-mjml-hero'
+import MjImage from 'browser-mjml-image'
+import MjRaw from 'browser-mjml-raw'
+import MjSection from 'browser-mjml-section'
+import MjSpacer from 'browser-mjml-spacer'
+import MjTable from 'browser-mjml-table'
+import MjText from 'browser-mjml-text'
+import MjWrapper from 'browser-mjml-wrapper'
+import dependencies from './dependencies'
 
-registerComponent(require('mjml-raw'))
-registerComponent(require('mjml-section'))
-registerComponent(require('mjml-spacer'))
-registerComponent(require('mjml-text'))
-registerComponent(require('mjml-table'))
-registerComponent(require('mjml-wrapper'))
+registerComponent(MjBody)
+registerComponent(MjButton)
+registerComponent(MjColumn)
+registerComponent(MjDivider)
+registerComponent(MjGroup)
+registerComponent(MjHead)
+registerComponent(MjHeadAttributes)
+registerComponent(MjHeadBreakpoint)
+registerComponent(MjHeadFont)
+registerComponent(MjHeadPreview)
+registerComponent(MjHeadStyle)
+registerComponent(MjHeadTitle)
+registerComponent(MjHero)
+registerComponent(MjImage)
+registerComponent(MjRaw)
+registerComponent(MjSection)
+registerComponent(MjSpacer)
+registerComponent(MjTable)
+registerComponent(MjText)
+registerComponent(MjWrapper)
 
 registerComponent(Social)
 registerComponent(SocialElement)
@@ -44,6 +64,6 @@ registerComponent(AccordionTitle)
 registerComponent(Carousel)
 registerComponent(CarouselImage)
 
-registerDependencies(require('./dependencies'))
+registerDependencies(dependencies)
 
 export default mjml2html

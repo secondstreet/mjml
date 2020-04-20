@@ -1,4 +1,4 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
 export default class MjBody extends BodyComponent {
   static allowedAttributes = {
@@ -30,12 +30,10 @@ export default class MjBody extends BodyComponent {
     setBackgroundColor(this.getAttribute('background-color'))
 
     return `
-      <div
-        ${this.htmlAttributes({
-          class: this.getAttribute('css-class'),
-          style: 'div',
-        })}
-      >
+      <div ${this.htmlAttributes({
+        class: this.getAttribute('css-class'),
+        style: 'div',
+      })}>
         ${this.renderChildren()}
       </div>
     `

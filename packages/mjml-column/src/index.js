@@ -1,6 +1,6 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
-import widthParser from 'mjml-core/lib/helpers/widthParser'
+import widthParser from 'browser-mjml-core/lib/helpers/widthParser'
 
 export default class MjColumn extends BodyComponent {
   static allowedAttributes = {
@@ -210,15 +210,13 @@ export default class MjColumn extends BodyComponent {
 
   renderGutter() {
     return `
-      <table
-        ${this.htmlAttributes({
-          border: '0',
-          cellpadding: '0',
-          cellspacing: '0',
-          role: 'presentation',
-          width: '100%',
-        })}
-      >
+      <table ${this.htmlAttributes({
+        border: '0',
+        cellpadding: '0',
+        cellspacing: '0',
+        role: 'presentation',
+        width: '100%',
+      })}>
         <tbody>
           <tr>
             <td ${this.htmlAttributes({ style: 'gutter' })}>
@@ -234,16 +232,14 @@ export default class MjColumn extends BodyComponent {
     const { children } = this.props
 
     return `
-      <table
-        ${this.htmlAttributes({
-          border: '0',
-          cellpadding: '0',
-          cellspacing: '0',
-          role: 'presentation',
-          style: 'table',
-          width: '100%',
-        })}
-      >
+      <table ${this.htmlAttributes({
+        border: '0',
+        cellpadding: '0',
+        cellspacing: '0',
+        role: 'presentation',
+        style: 'table',
+        width: '100%',
+      })}>
         ${this.renderChildren(children, {
           renderer: (
             component, // eslint-disable-line no-confusing-arrow
@@ -252,25 +248,23 @@ export default class MjColumn extends BodyComponent {
               ? component.render()
               : `
             <tr>
-              <td
-                ${component.htmlAttributes({
-                  align: component.getAttribute('align'),
-                  'vertical-align': component.getAttribute('vertical-align'),
-                  class: component.getAttribute('css-class'),
-                  style: {
-                    background: component.getAttribute(
-                      'container-background-color',
-                    ),
-                    'font-size': '0px',
-                    padding: component.getAttribute('padding'),
-                    'padding-top': component.getAttribute('padding-top'),
-                    'padding-right': component.getAttribute('padding-right'),
-                    'padding-bottom': component.getAttribute('padding-bottom'),
-                    'padding-left': component.getAttribute('padding-left'),
-                    'word-break': 'break-word',
-                  },
-                })}
-              >
+              <td ${component.htmlAttributes({
+                align: component.getAttribute('align'),
+                'vertical-align': component.getAttribute('vertical-align'),
+                class: component.getAttribute('css-class'),
+                style: {
+                  background: component.getAttribute(
+                    'container-background-color',
+                  ),
+                  'font-size': '0px',
+                  padding: component.getAttribute('padding'),
+                  'padding-top': component.getAttribute('padding-top'),
+                  'padding-right': component.getAttribute('padding-right'),
+                  'padding-bottom': component.getAttribute('padding-bottom'),
+                  'padding-left': component.getAttribute('padding-left'),
+                  'word-break': 'break-word',
+                },
+              })}>
                 ${component.render()}
               </td>
             </tr>
@@ -288,12 +282,10 @@ export default class MjColumn extends BodyComponent {
     }
 
     return `
-      <div
-        ${this.htmlAttributes({
-          class: classesName,
-          style: 'div',
-        })}
-      >
+      <div ${this.htmlAttributes({
+        class: classesName,
+        style: 'div',
+      })}>
         ${this.hasGutter() ? this.renderGutter() : this.renderColumn()}
       </div>
     `

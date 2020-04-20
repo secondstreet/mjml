@@ -104,7 +104,7 @@ See [mjml-cli documentation](https://github.com/mjmlio/mjml/blob/master/packages
 ## Inside Node.js
 
 ```javascript
-import mjml2html from 'mjml'
+import mjml2html from 'browser-mjml'
 
 /*
   Compile an mjml string

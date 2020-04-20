@@ -1,4 +1,4 @@
-import { BodyComponent } from 'mjml-core'
+import { BodyComponent } from 'browser-mjml-core'
 
 import widthParser from 'mjml-core/lib/helpers/widthParser'
 
