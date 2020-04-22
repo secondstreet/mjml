@@ -1,7 +1,7 @@
 {
   "name": "browser-mjml-core",
   "description": "browser-mjml-core",
-  "version": "4.6.3",
+  "version": "4.6.6",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
-    "browser-mjml-migrate": "4.6.1",
-    "browser-mjml-parser-xml": "4.6.3",
-    "browser-mjml-validator": "4.5.1",
+    "browser-mjml-migrate": "4.6.6",
+    "browser-mjml-parser-xml": "4.6.6",
+    "browser-mjml-validator": "4.6.6",
     "html-minifier": "^3.5.3",
     "js-beautify": "^1.6.14",
     "juice": "^5.2.0",
