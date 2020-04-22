@@ -23,7 +23,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.7",
     "browser-mjml-core": "4.6.3",
-    "browser-mjml-parser-xml": "4.5.1",
+    "browser-mjml-parser-xml": "4.6.3",
     "commander": "^2.11.0",
     "js-beautify": "^1.6.14",
     "lodash": "^4.17.15"
