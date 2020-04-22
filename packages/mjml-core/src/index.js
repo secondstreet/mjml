@@ -26,16 +26,6 @@ export default function mjml2html(mjml, options = {}) {
   let content = ''
   let errors = []
 
-  if (typeof options.skeleton === 'string') {
-    /* eslint-disable global-require */
-    /* eslint-disable import/no-dynamic-require */
-    options.skeleton = require(options.skeleton.charAt(0) === '.'
-      ? path.resolve(process.cwd(), options.skeleton)
-      : options.skeleton)
-    /* eslint-enable global-require */
-    /* eslint-enable import/no-dynamic-require */
-  }
-
   const {
     beautify = false,
     fonts = {
