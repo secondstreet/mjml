@@ -1,7 +1,7 @@
 {
   "name": "browser-mjml-parser-xml",
   "description": "browser-mjml-parser-xml",
-  "version": "4.6.7",
+  "version": "4.2.8",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -23,10 +23,8 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "browser-mjml": "4.6.7",
-    "browser-mjml-core": "4.6.7",
-    "chai": "^4.1.1",
-    "rimraf": "^3.0.2"
+    "browser-mjml": "^4.2.8",
+    "browser-mjml-core": "^4.2.8",
+    "chai": "^4.1.1"
   }
 }
